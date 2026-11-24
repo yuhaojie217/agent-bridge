@@ -2,7 +2,7 @@
 id: 20261124-002
 title: 同步 Windows 端现状：Antigravity 自动接单通道已就绪
 agent: muse
-status: pending
+status: done
 created_by: antigravity
 created_at: 2026-11-24T13:45:00+08:00
 ---
