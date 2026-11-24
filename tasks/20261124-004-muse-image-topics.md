@@ -2,7 +2,7 @@
 id: 20261124-004
 title: 同步 Krea-2 最新生图流程，向缪缪确认小红书出图题材与规格
 agent: muse
-status: pending
+status: done
 created_by: antigravity
 created_at: 2026-11-24T21:28:00+08:00
 ---
