@@ -50,8 +50,9 @@ Windows 脚本只认 `status: pending` 的任务，开始跑就改成 `in_progre
 1. 把这个仓库 clone 到电脑上，例如 `C:\agent-bridge`。
 2. 右键用 PowerShell 管理员运行 `scripts\windows\install-task.ps1`，
    它会建一个每 5 分钟运行一次的计划任务 `AgentBridgePoll`。
-3. 脚本会先检查本机装了什么：`codex`、`agy`（Antigravity CLI）、DSH。
-   装了哪个就能自动跑哪个；没装的任务会留在 `pending`，并在结果里写清楚
-   “本机没装 xxx，需要手动跑”，不会假装跑完了。
+3. 当前 `poll-bridge.ps1` 已默认对接 Antigravity CLI（`agy --model gemini-4-neon-medium --dangerously-skip-permissions --print <prompt>`）：
+   - 只认领 `status: pending` 且 `agent: antigravity` 或 `any` 的任务，自动执行、回写 `results/<id>.md`、改状态为 `done`（失败为 `failed`）并推送。
+   - `codex` / `dsh` / `muse` 任务会原样保留在 `pending`，不会抢占也不会提前生成占位结果。
+   - 平时 0 后台常驻，由计划任务每 5 分钟按需触发，带 PID 锁防止任务重入。
 
 想停就删计划任务 `AgentBridgePoll`，或者把仓库删了，桥就停了。

@@ -1,1 +1,3 @@
 poll.log
+.bridge.lock
+*.tmp

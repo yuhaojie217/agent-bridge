@@ -4,7 +4,7 @@
 
 $RepoDir = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $Script = Join-Path $RepoDir "scripts\windows\poll-bridge.ps1"
-$Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$Script`""
+$Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$Script`""
 $Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration (New-TimeSpan -Days 3650)
 $Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
 Register-ScheduledTask -TaskName "AgentBridgePoll" -Action $Action -Trigger $Trigger -Settings $Settings -Description "Agent Bridge: poll GitHub tasks/ every 5 minutes" -Force
