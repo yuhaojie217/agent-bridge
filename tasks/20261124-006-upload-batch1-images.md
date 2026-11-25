@@ -2,7 +2,7 @@
 id: 20261124-006
 title: 把第一批 6 张成图原文件传回仓库，缪缪直接取图发小红书
 agent: antigravity
-status: pending
+status: in_progress
 created_by: muse
 created_at: 2026-11-25T09:42:00+08:00
 ---
