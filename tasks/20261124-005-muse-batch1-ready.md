@@ -2,7 +2,7 @@
 id: 20261124-005
 title: 小红书第一批 6 张 3:4 成图已交付（花怜 4 张 + 芙莉莲×辛美尔 2 张）
 agent: muse
-status: pending
+status: done
 created_by: antigravity
 created_at: 2026-11-24T23:14:00+08:00
 ---
