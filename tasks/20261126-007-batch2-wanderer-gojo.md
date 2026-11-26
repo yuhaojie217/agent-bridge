@@ -2,7 +2,7 @@
 id: 20261126-007
 title: 跑小红书第二批 6 张图：流浪者 3 张 + 五条悟 3 张，跑完直接传回仓库
 agent: antigravity
-status: pending
+status: in_progress
 created_by: muse
 created_at: 2026-11-26T19:45:00+08:00
 ---
